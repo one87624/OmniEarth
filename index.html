@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="OmniEarth: A Benchmark for Evaluating Vision每Language Models in Geospatial Tasks">
+  <meta name="keywords" content="OmniEarth, Remote Sensing, VLM, Benchmark, Geospatial Tasks, Jilin-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OmniEarth: Evaluating Vision每Language Models in Geospatial Tasks</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">OmniEarth: A Benchmark for Evaluating Vision每Language Models in Geospatial Tasks</h1>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Ronghao Fu<sup>1*</sup>,</span>
+            <span class="author-block">Haoran Liu<sup>1*</sup>,</span>
+            <span class="author-block">Weijie Zhang<sup>1</sup>,</span>
+            <span class="author-block">Zhiwen Lin<sup>1</sup>,</span>
+            <span class="author-block">Xiao Yang<sup>1</sup>,</span>
+            <span class="author-block">Peng Zhang<sup>2</sup>,</span>
+            <span class="author-block">Bo Yang<sup>1?</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Jilin University, China,</span>
+            <span class="author-block"><sup>2</sup>Chang Guang Satellite Technology, China</span>
+            <br>
+            <span class="author-block is-size-6"><sup>*</sup>Equal Contribution  <sup>?</sup>Corresponding Author</span>
+            <br>
+            <span class="author-block is-size-5 has-text-weight-bold" style="color: #4a4a4a;">KDD 2026</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/YOUR_ARXIV_ID_HERE"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/one87624/OmniEarth"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/sjeeudd/OmniEarth"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/examples.png" alt="OmniEarth Tasks Examples" width="100%">
+      <h2 class="subtitle has-text-centered" style="margin-top: 15px;">
+        <strong>OmniEarth</strong> comprehensively covers 28 fine-grained tasks categorized into 3 dimensions: Perception, Reasoning, and Robustness.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Vision每Language Models (VLMs) have demonstrated effective perception and reasoning capabilities on general-domain tasks, leading to growing interest in their application to Earth observation. However, a systematic benchmark for comprehensively evaluating remote sensing vision每language models (RSVLMs) remains lacking.
+          </p>
+          <p>
+            To address this gap, we introduce <strong>OmniEarth</strong>, a benchmark for evaluating RSVLMs under realistic Earth observation scenarios. OmniEarth defines 28 fine-grained tasks covering multi-source sensing data and diverse geospatial contexts. To reduce linguistic bias and examine whether model predictions genuinely rely on visual evidence, OmniEarth adopts a <strong>blind test protocol</strong> and a quintuple semantic consistency requirement. 
+          </p>
+          <p>
+            OmniEarth includes 9,275 carefully quality-controlled images, including proprietary satellite imagery from Jilin-1 (JL-1), along with 44,210 manually verified instructions. We conduct a systematic evaluation of 19 VLMs. Results show that while modern architectures (e.g., Qwen3-VL) exhibit significant gains in spatial inference, existing models still struggle with geospatially complex tasks, revealing clear gaps for true visual grounding in remote sensing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-vcentered">
+      <div class="column is-half">
+        <h2 class="title is-3">Taxonomy & Global Coverage</h2>
+        <div class="content has-text-justified">
+          <p>
+            OmniEarth adopts a hierarchical taxonomy across three dimensions: <strong>Perception</strong> (image/instance/pixel-level), <strong>Reasoning</strong> (spatial/temporal/geographic), and <strong>Robustness</strong> (environmental/semantic). 
+          </p>
+          <p>
+            To mitigate data leakage and geographic bias, we curated high-resolution imagery from over 400 cities across seven continents, exclusively integrating proprietary JL-1 optical imagery and Capella SAR data to ensure zero-shot evaluation reliability.
+          </p>
+        </div>
+      </div>
+      <div class="column is-half">
+        <img src="./static/images/tax-c.png" alt="OmniEarth Taxonomy" width="100%" style="margin-bottom: 20px;">
+        <img src="./static/images/world.png" alt="Global Data Distribution" width="100%">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">The Blind Test Protocol: True Visual Grounding?</h2>
+        <div class="content has-text-justified">
+          <p>
+            Do RSVLMs actually look at the remote sensing images, or are they guessing based on text prompts? We introduced a blind test protocol (text-only evaluation) and calculated the <strong>Visual Gain (&Delta;)</strong>. 
+          </p>
+          <p>
+            Our findings reveal that many remote sensing-specific models rely heavily on linguistic shortcuts. However, we observed a significant architectural evolution: <strong>Qwen3-VL</strong> delivers a profound performance leap over Qwen2.5-VL in complex spatial inference tasks (e.g., Functional Region Localization), demonstrating genuine visual grounding rather than relying on textual prior distributions.
+          </p>
+        </div>
+        <div class="has-text-centered">
+          <img src="./static/images/blindtest.png" alt="Blind Test Results" width="80%">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-vcentered">
+      <div class="column is-half has-text-centered">
+         <img src="./static/images/sar-rgb.png" alt="SAR and RGB Pairs" width="100%">
+      </div>
+      <div class="column is-half">
+        <h2 class="title is-3">Cross-Modal & Robustness</h2>
+        <div class="content has-text-justified">
+          <p>
+            To evaluate environmental resilience and semantic reliability, OmniEarth introduces strict robustness tests, including <strong>Degraded-condition VQA (DVQA)</strong> and <strong>Semantic Consistency (SEC)</strong>.
+          </p>
+          <p>
+            We manually aligned SAR imagery (Capella SLC data processed via rigorous radiometric calibration) with corresponding optical footprints in Google Earth, creating high-fidelity SAR每RGB pairs to challenge cross-modal spatial matching capabilities under severe speckle noise.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{fu2026omniearth,
+  author    = {Fu, Ronghao and Liu, Haoran and Zhang, Weijie and Lin, Zhiwen and Yang, Xiao and Zhang, Peng and Yang, Bo},
+  title     = {OmniEarth: A Benchmark for Evaluating Vision--Language Models in Geospatial Tasks},
+  year      = {2026},
+  isbn      = {979-8-4007-2259-2/2026/08},
+  publisher = {Association for Computing Machinery},
+  doi       = {10.1145/3770855.3817467},
+  booktitle = {Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://github.com/one87624/OmniEarth">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
+            Source code adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
