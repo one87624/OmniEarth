@@ -1,0 +1,506 @@
+/*
+ * OmniEarth Project Page Styles
+ * Directory:
+ *   index.html
+ *   static/
+ *     css/index.css
+ *     js/index.js
+ */
+
+:root {
+  --omniearth-bg: #ffffff;
+  --omniearth-bg-soft: #f7f9fc;
+  --omniearth-card: #ffffff;
+  --omniearth-text: #243042;
+  --omniearth-muted: #5d6b82;
+  --omniearth-border: #e6ebf2;
+  --omniearth-primary: #1f6feb;
+  --omniearth-primary-dark: #174ea6;
+  --omniearth-accent: #18a999;
+  --omniearth-shadow: 0 16px 45px rgba(31, 42, 68, 0.10);
+  --omniearth-radius: 18px;
+  --omniearth-radius-sm: 12px;
+  --omniearth-max-width: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--omniearth-bg);
+}
+
+body {
+  margin: 0;
+  color: var(--omniearth-text);
+  font-family: "Google Sans", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.72;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(31, 111, 235, 0.10), transparent 32rem),
+    radial-gradient(circle at 92% 12%, rgba(24, 169, 153, 0.11), transparent 28rem),
+    var(--omniearth-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body.is-loaded .section,
+body.is-loaded .hero,
+body.is-loaded .footer {
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+a {
+  color: var(--omniearth-primary);
+  text-decoration: none;
+  transition: color 0.18s ease, opacity 0.18s ease, transform 0.18s ease;
+}
+
+a:hover {
+  color: var(--omniearth-primary-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--omniearth-radius-sm);
+}
+
+/* Lightweight fallback for the Bulma layout classes used by the page.
+   If bulma.min.css exists, these rules simply refine the project look. */
+.container {
+  width: min(var(--omniearth-max-width), calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.container.is-max-desktop {
+  max-width: 960px;
+}
+
+.columns {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.columns.is-centered {
+  justify-content: center;
+}
+
+.columns.is-vcentered {
+  align-items: center;
+}
+
+.column {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.column.is-half {
+  flex: 0 0 calc(50% - 1.2rem);
+}
+
+.column.is-four-fifths {
+  flex: 0 0 80%;
+}
+
+.column.is-full-width {
+  flex: 0 0 100%;
+}
+
+.has-text-centered {
+  text-align: center;
+}
+
+.has-text-justified {
+  text-align: justify;
+}
+
+.has-text-weight-bold {
+  font-weight: 700;
+}
+
+.is-size-5 {
+  font-size: 1.15rem;
+}
+
+.is-size-6 {
+  font-size: 0.95rem;
+}
+
+.section,
+.hero-body {
+  padding: 4.5rem 0;
+}
+
+.section.is-light,
+.hero.teaser {
+  background: linear-gradient(180deg, rgba(247, 249, 252, 0.94), rgba(255, 255, 255, 0.98));
+  border-top: 1px solid var(--omniearth-border);
+  border-bottom: 1px solid var(--omniearth-border);
+}
+
+.title {
+  color: #172033;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.14;
+  margin: 0 0 1.2rem;
+}
+
+.title.is-2 {
+  font-size: clamp(2.15rem, 5vw, 3.55rem);
+}
+
+.title.is-3 {
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+}
+
+.subtitle {
+  color: var(--omniearth-muted);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.55;
+}
+
+.content p {
+  margin-top: 0;
+  margin-bottom: 1.15rem;
+}
+
+.content strong {
+  color: #13213a;
+}
+
+/* Hero */
+.hero:first-of-type {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(31, 111, 235, 0.10), rgba(24, 169, 153, 0.08)),
+    #ffffff;
+  border-bottom: 1px solid var(--omniearth-border);
+}
+
+.hero:first-of-type::before,
+.hero:first-of-type::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.hero:first-of-type::before {
+  width: 360px;
+  height: 360px;
+  left: -110px;
+  top: -120px;
+  background: rgba(31, 111, 235, 0.12);
+}
+
+.hero:first-of-type::after {
+  width: 280px;
+  height: 280px;
+  right: -90px;
+  bottom: -110px;
+  background: rgba(24, 169, 153, 0.13);
+}
+
+.publication-title {
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.publication-authors {
+  color: var(--omniearth-muted);
+  margin-top: 0.8rem;
+}
+
+.author-block {
+  display: inline-block;
+  margin: 0 0.18rem 0.35rem;
+}
+
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.35rem;
+}
+
+.link-block {
+  display: inline-flex;
+}
+
+.button,
+.external-link.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.48rem;
+  min-height: 2.65rem;
+  padding: 0.68rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid rgba(23, 32, 51, 0.10);
+  background: #1f2937;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 10px 24px rgba(31, 41, 55, 0.14);
+}
+
+.button:hover,
+.external-link.button:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(31, 41, 55, 0.22);
+}
+
+.button .icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Image sections */
+.hero.teaser .hero-body {
+  padding-top: 3.3rem;
+  padding-bottom: 3.3rem;
+}
+
+.hero.teaser img,
+.section img {
+  background: #ffffff;
+  border: 1px solid var(--omniearth-border);
+  box-shadow: var(--omniearth-shadow);
+}
+
+.section img[alt="Blind Test Results"] {
+  margin-top: 1.25rem;
+}
+
+/* Cards for each content section */
+.section > .container {
+  position: relative;
+}
+
+.section:not(.is-light) .content,
+.section:not(.is-light) pre {
+  background: rgba(255, 255, 255, 0.84);
+}
+
+/* BibTeX */
+#BibTeX pre {
+  position: relative;
+  overflow-x: auto;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid var(--omniearth-border);
+  border-radius: var(--omniearth-radius-sm);
+  background: #0f172a;
+  color: #e5e7eb;
+  box-shadow: var(--omniearth-shadow);
+}
+
+#BibTeX code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  white-space: pre;
+}
+
+.copy-bibtex-button {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 0.38rem 0.72rem;
+  background: rgba(255, 255, 255, 0.10);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+.copy-bibtex-button:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Footer */
+.footer {
+  padding: 2.7rem 0;
+  background: #0f172a;
+  color: #cbd5e1;
+}
+
+.footer a {
+  color: #dbeafe;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.10);
+  color: #ffffff;
+  font-size: 1.35rem;
+}
+
+.icon-link:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.footer .content {
+  color: #cbd5e1;
+  font-size: 0.96rem;
+}
+
+/* Optional JS reveal effect */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image fallback inserted by JS */
+.image-missing-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  padding: 1.5rem;
+  border: 1px dashed #b8c4d6;
+  border-radius: var(--omniearth-radius-sm);
+  background: rgba(247, 249, 252, 0.9);
+  color: var(--omniearth-muted);
+  text-align: center;
+  box-shadow: none;
+}
+
+/* Back-to-top button */
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 30;
+  width: 2.85rem;
+  height: 2.85rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--omniearth-primary);
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 800;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  box-shadow: 0 12px 30px rgba(31, 111, 235, 0.30);
+  transition: opacity 0.22s ease, transform 0.22s ease, background 0.22s ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: var(--omniearth-primary-dark);
+}
+
+@media (max-width: 900px) {
+  .columns,
+  .columns.is-vcentered {
+    display: block;
+  }
+
+  .column,
+  .column.is-half,
+  .column.is-four-fifths,
+  .column.is-full-width {
+    width: 100%;
+    flex: none;
+  }
+
+  .column + .column {
+    margin-top: 2rem;
+  }
+
+  .section,
+  .hero-body {
+    padding: 3.2rem 0;
+  }
+
+  .container {
+    width: min(100% - 28px, var(--omniearth-max-width));
+  }
+
+  .has-text-justified {
+    text-align: left;
+  }
+
+  .publication-links {
+    gap: 0.55rem;
+  }
+
+  .button,
+  .external-link.button {
+    width: auto;
+    min-height: 2.55rem;
+  }
+}
+
+@media (max-width: 520px) {
+  body {
+    font-size: 16px;
+  }
+
+  .title.is-2 {
+    font-size: 2rem;
+  }
+
+  .title.is-3 {
+    font-size: 1.55rem;
+  }
+
+  .publication-authors {
+    font-size: 0.98rem;
+  }
+
+  .publication-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .link-block,
+  .button,
+  .external-link.button {
+    width: 100%;
+  }
+
+  #BibTeX pre {
+    padding-top: 3.1rem;
+  }
+
+  .back-to-top {
+    right: 0.85rem;
+    bottom: 0.85rem;
+  }
+}
